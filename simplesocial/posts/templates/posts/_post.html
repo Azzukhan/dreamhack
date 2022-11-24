@@ -4,7 +4,7 @@
 		<strong>{{ post.user.username }}</strong>
 		<h5 class="media-heading">
 			{% if post.img_field %}
-				<img src="{{ post.img_field.url }}" width="200" height="200" alt="">
+				<a href="{{ post.img_field.url }}"><img src="{{ post.img_field.url }}" width="200" height="200" alt=""></a>
 			{% endif %}
 			<span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
 			<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
